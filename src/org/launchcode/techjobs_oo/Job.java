@@ -14,6 +14,7 @@ public class Job {
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
     //  the 'id' field.
+    //COMPLETE
     public Job (){
         id = nextId;
         nextId++;
@@ -28,18 +29,24 @@ public class Job {
     }
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
-
+    //COMPLETE
 
 //----- not sure if this is correct -----
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object o) {  // Two objects are equal if they have the same id.
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
+        if (!(o instanceof Job)) return false;
         Job job = (Job) o;
-
-        return id == job.id;
+        return getId() == job.getId();
     }
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//
+//        Job job = (Job) o;
+//
+//        return id == job.id;
+//    }
 //----- not sure if this is correct -----
 
 
@@ -50,6 +57,7 @@ public class Job {
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
+    //COMPLETE
 
     public int getId() {
         return id;
