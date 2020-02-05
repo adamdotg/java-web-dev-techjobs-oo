@@ -25,7 +25,6 @@ public class JobTest {
 //        Job test_job = new Job("Web Dev", employer, location, positionType, coreCompetency);
 //        Job test_job_2 = new Job("Web Dev 2", employer,location, positionType, coreCompetency);
 //    }
-
 //    @Test
 //    public void testSettingJobId(){
 //        assertFalse("This is false", test_job.getId()==test_job_2.getId());
@@ -34,7 +33,6 @@ public class JobTest {
 //    public void testJobConstructorSetsAllFields() {
 //        test_job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 //    }
-//
 //    @Test
 //    public void testID() {
 //        assertEquals(1, test_job.getId());
@@ -54,16 +52,27 @@ public class JobTest {
     @Test
     public void testJobConstructorSetsAllFields() {
         test_job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        test_job_2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
-    assertEquals(1, test_job.getId());
-    assertEquals("Product tester", test_job.getName());
-    assertEquals("ACME", test_job.getEmployer().toString());
-    assertEquals("Desert", test_job.getLocation().toString());
-    assertEquals("Quality control", test_job.getPositionType().toString());
-    assertEquals("Persistence", test_job.getCoreCompetency().toString());
+        assertEquals(1, test_job.getId());
+        assertEquals("Product tester", test_job.getName());
+        assertEquals("ACME", test_job.getEmployer().toString());
+        assertEquals("Desert", test_job.getLocation().toString());
+        assertEquals("Quality control", test_job.getPositionType().toString());
+        assertEquals("Persistence", test_job.getCoreCompetency().toString());
+        assertEquals(2, test_job_2.getId());
 
     assertTrue(test_job instanceof Job);
-}
+    }
+    @Test
+    public void testJobsForEquality(){
+        test_job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        test_job_2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        int firstID = test_job.getId();
+        int secondID = test_job_2.getId();
+
+        assertFalse (test_job.equals(test_job_2));
+    }
 
 
 
