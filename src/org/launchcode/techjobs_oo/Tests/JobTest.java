@@ -72,6 +72,7 @@ public class JobTest {
         int secondID = test_job_2.getId();
 
         assertFalse (test_job.equals(test_job_2));
+        assertFalse (firstID == secondID);
     }
 
 
