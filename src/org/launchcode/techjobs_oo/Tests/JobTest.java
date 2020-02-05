@@ -30,18 +30,43 @@ public class JobTest {
 //    public void testSettingJobId(){
 //        assertFalse("This is false", test_job.getId()==test_job_2.getId());
 //    }
-    @Before
-    public void createJobObject() {
-        Job test_job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-    }
+//    @Before
+//    public void testJobConstructorSetsAllFields() {
+//        test_job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+//    }
+//
+//    @Test
+//    public void testID() {
+//        assertEquals(1, test_job.getId());
+//    }
+//    @Test
+//    public void testName(){
+//        assertEquals("Product tester", test_job.getName());
+//    }
+//    @Test
+//    public void testEmployer(){
+//        assertEquals("ACME", test_job.getEmployer().toString());
+//    }
+//    @Test
+//    public void testLocation(){
+//        assertEquals("Desert", test_job.getLocation().toString());
+//    }
     @Test
     public void testJobConstructorSetsAllFields() {
-        assertEquals();
-    }
+        test_job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
-    private void assertEquals() {
-        test_job.getName().equals("Product tester");
-    }
+    assertEquals(1, test_job.getId());
+    assertEquals("Product tester", test_job.getName());
+    assertEquals("ACME", test_job.getEmployer().toString());
+    assertEquals("Desert", test_job.getLocation().toString());
+    assertEquals("Quality control", test_job.getPositionType().toString());
+    assertEquals("Persistence", test_job.getCoreCompetency().toString());
+
+    assertTrue(test_job instanceof Job);
+}
+
+
+
 
 
 }
