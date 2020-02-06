@@ -113,7 +113,7 @@ public class Job {
         String stringCoreComp = this.getCoreCompetency().toString();
 
         //if statement that returns "OOPS! This job does not seem to exist." if all fields but ID are empty.
-        //if (stringName.isEmpty() || stringEmp.isEmpty() \\
+        //if (stringName.isEmpty() && stringEmp.isEmpty() &&
         // return "OOPS! This job does not seem to exist.";
 
         if (stringName.isEmpty()){ stringName= "Data not available"; }

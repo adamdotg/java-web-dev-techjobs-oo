@@ -13,6 +13,11 @@ import static org.junit.Assert.*;
 public class JobTest {
     Job test_job;
     Job test_job_2;
+    Job empty_field_1;
+    Job empty_field_2;
+    Job empty_field_3;
+    Job empty_field_4;
+    Job empty_field_5;
 
     private String name;
     private Employer employer;
@@ -54,6 +59,12 @@ public class JobTest {
     public void createJobObject(){
         test_job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         test_job_2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        empty_field_1 = new Job("", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        empty_field_2 = new Job("Product tester", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        empty_field_3 = new Job("Product tester", new Employer("ACME"), new Location(""), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        empty_field_4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType(""), new CoreCompetency("Persistence"));
+        empty_field_5 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency(""));
+
     }
 
     @Test
@@ -100,12 +111,30 @@ public class JobTest {
         assertTrue(testString.contains("Persistence"));
     }
     @Test
-    public void testEmptyField(){
-        Job empty = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
-        String emptyString = empty.toString();
-        //assertTrue(emptyString.contains("Data not available"));
-        assertTrue(empty.toString().contains("Data not available"));
+    public void testEmptyFieldName(){
+        String emptyString = empty_field_1.toString();
+        assertTrue(emptyString.contains("Data not available"));
     }
+  @Test
+  public void testEmptyFieldEmployer(){
+    String emptyString = empty_field_2.toString();
+    assertTrue(emptyString.contains("Data not available"));
+  }
+  @Test
+  public void testEmptyFieldLocation(){
+    String emptyString = empty_field_3.toString();
+    assertTrue(emptyString.contains("Data not available"));
+  }
+  @Test
+  public void testEmptyFieldPositionType(){
+    String emptyString = empty_field_4.toString();
+    assertTrue(emptyString.contains("Data not available"));
+  }
+  @Test
+  public void testEmptyFieldCoreCompetency(){
+    String emptyString = empty_field_5.toString();
+    assertTrue(emptyString.contains("Data not available"));
+  }
 
 
 
