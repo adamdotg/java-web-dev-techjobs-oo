@@ -125,7 +125,5 @@ public class Job {
         "Location: "+stringLoc+"\n"+
         "Position Type: "+stringPosType+"\n"+
         "Core Competency: "+stringCoreComp+"\n";
-
-
     }
 }
