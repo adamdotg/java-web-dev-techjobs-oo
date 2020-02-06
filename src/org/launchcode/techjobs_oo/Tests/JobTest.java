@@ -84,16 +84,24 @@ public class JobTest {
     public void testLabels(){
         String testString = test_job.toString();
         int firstID = test_job.getId();
-        String dog = String.valueOf(firstID);
+        String jobID = String.valueOf(firstID);
 
         assertTrue(testString.contains("ID: "));
-        assertTrue(testString.contains(dog));
+        assertTrue(testString.contains(jobID));
         assertTrue(testString.contains("Name: "));
         assertTrue(testString.contains(test_job.getName()));
         assertTrue(testString.contains("Employer: "));
-//        assertTrue(testString.contains("Location: "));
-//        assertTrue(testString.contains("Position Type: "));
-//        assertTrue(testString.contains("Core Competency: "));
+        assertTrue(testString.contains("ACME"));
+        assertTrue(testString.contains("Location: "));
+        assertTrue(testString.contains("Desert"));
+        assertTrue(testString.contains("Position Type: "));
+        assertTrue(testString.contains("Quality control"));
+        assertTrue(testString.contains("Core Competency: "));
+        assertTrue(testString.contains("Persistence"));
+    }
+    @Test
+    public void testEmptyField(){
+
     }
 
 

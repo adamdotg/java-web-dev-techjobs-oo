@@ -108,9 +108,9 @@ public class Job {
         return "\n"+
         "ID: "+this.getId()+"\n"+
         "Name: "+this.getName()+"\n"+
-        "Employer: "+"\n";
-//        "Location: "+"\n"+
-//        "Position Type: "+"\n"+
-//        "Core Competency: "+"\n";
+        "Employer: "+this.getEmployer()+"\n"+
+        "Location: "+location+"\n"+
+        "Position Type: "+positionType+"\n"+
+        "Core Competency: "+coreCompetency+"\n";
     }
 }
