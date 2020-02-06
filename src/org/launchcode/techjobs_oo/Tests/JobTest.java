@@ -89,7 +89,7 @@ public class JobTest {
         assertTrue(testString.contains("ID: "));
         assertTrue(testString.contains(jobID));
         assertTrue(testString.contains("Name: "));
-        assertTrue(testString.contains(test_job.getName()));
+        assertTrue(testString.contains("Product tester"));
         assertTrue(testString.contains("Employer: "));
         assertTrue(testString.contains("ACME"));
         assertTrue(testString.contains("Location: "));
@@ -101,7 +101,10 @@ public class JobTest {
     }
     @Test
     public void testEmptyField(){
-
+        Job empty = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+        String emptyString = empty.toString();
+        //assertTrue(emptyString.contains("Data not available"));
+        assertTrue(empty.toString().contains("Data not available"));
     }
 
 

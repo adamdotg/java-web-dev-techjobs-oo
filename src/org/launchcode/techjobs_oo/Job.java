@@ -105,12 +105,27 @@ public class Job {
 
     @Override
     public String toString(){
+
+        String stringName = this.getName();
+        String stringEmp = this.getEmployer().toString();
+        String stringLoc = this.getLocation().toString();
+        String stringPosType = this.getPositionType().toString();
+        String stringCoreComp = this.getCoreCompetency().toString();
+
+        if (stringName.isEmpty()){ stringName= "Data not available"; }
+        if (stringEmp.isEmpty()){ stringEmp = "Data not available"; }
+        if (stringLoc.isEmpty()){ stringLoc = "Data not available"; }
+        if (stringPosType.isEmpty()){ stringPosType = "Data not available"; }
+        if (stringCoreComp.isEmpty()){ stringCoreComp = "Data not available"; }
+
         return "\n"+
         "ID: "+this.getId()+"\n"+
-        "Name: "+this.getName()+"\n"+
-        "Employer: "+this.getEmployer()+"\n"+
-        "Location: "+location+"\n"+
-        "Position Type: "+positionType+"\n"+
-        "Core Competency: "+coreCompetency+"\n";
+        "Name: "+stringName+"\n"+
+        "Employer: "+stringEmp+"\n"+
+        "Location: "+stringLoc+"\n"+
+        "Position Type: "+stringPosType+"\n"+
+        "Core Competency: "+stringCoreComp+"\n";
+
+
     }
 }
