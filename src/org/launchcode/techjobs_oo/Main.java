@@ -1,9 +1,11 @@
 package org.launchcode.techjobs_oo;
 
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello");
+        //System.out.println("Hello");
 //        Job tester = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 //        System.out.println(tester.getId());
 
@@ -14,6 +16,7 @@ public class Main {
 //        ArrayList<Job> jobs = new ArrayList<>();
 //        jobs.add(job1);
 //        jobs.add(job2);
+//        jobs.add(job3);
 //
 //        for (Job job : jobs){
 //            System.out.println(job);
