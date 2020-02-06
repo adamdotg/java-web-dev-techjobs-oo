@@ -49,11 +49,15 @@ public class JobTest {
 //    public void testLocation(){
 //        assertEquals("Desert", test_job.getLocation().toString());
 //    }
-    @Test
-    public void testJobConstructorSetsAllFields() {
+
+    @Before
+    public void createJobObject(){
         test_job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         test_job_2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+    }
 
+    @Test
+    public void testJobConstructorSetsAllFields() {
         assertEquals(1, test_job.getId());
         assertEquals("Product tester", test_job.getName());
         assertEquals("ACME", test_job.getEmployer().toString());
@@ -61,21 +65,36 @@ public class JobTest {
         assertEquals("Quality control", test_job.getPositionType().toString());
         assertEquals("Persistence", test_job.getCoreCompetency().toString());
         assertEquals(2, test_job_2.getId());
-
-    assertTrue(test_job instanceof Job);
+        assertTrue(test_job instanceof Job);
     }
     @Test
     public void testJobsForEquality(){
-        test_job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        test_job_2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         int firstID = test_job.getId();
         int secondID = test_job_2.getId();
-
         assertFalse (test_job.equals(test_job_2));
         assertFalse (firstID == secondID);
     }
+    @Test
+    public void testBlankLine(){
+        String testString = test_job.toString();
+        assertTrue(testString.startsWith("\n"));
+        assertTrue(testString.endsWith("\n"));
+    }
+    @Test
+    public void testLabels(){
+        String testString = test_job.toString();
+        int firstID = test_job.getId();
+        String dog = String.valueOf(firstID);
 
-
+        assertTrue(testString.contains("ID: "));
+        assertTrue(testString.contains(dog));
+        assertTrue(testString.contains("Name: "));
+        assertTrue(testString.contains(test_job.getName()));
+        assertTrue(testString.contains("Employer: "));
+//        assertTrue(testString.contains("Location: "));
+//        assertTrue(testString.contains("Position Type: "));
+//        assertTrue(testString.contains("Core Competency: "));
+    }
 
 
 
