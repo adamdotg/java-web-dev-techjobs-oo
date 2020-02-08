@@ -18,6 +18,7 @@ public class JobTest {
     Job empty_field_3;
     Job empty_field_4;
     Job empty_field_5;
+    Job empty_field_all;
 
     private String name;
     private Employer employer;
@@ -64,6 +65,7 @@ public class JobTest {
         empty_field_3 = new Job("Product tester", new Employer("ACME"), new Location(""), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         empty_field_4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType(""), new CoreCompetency("Persistence"));
         empty_field_5 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency(""));
+        empty_field_all = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
 
     }
 
@@ -135,7 +137,11 @@ public class JobTest {
         String emptyString = empty_field_5.toString();
         assertTrue(emptyString.contains("Data not available"));
       }
-
+    @Test
+    public void testAllEmptyFields(){
+        String emptyString = empty_field_all.toString();
+        assertTrue(emptyString.contains(("OOPS! This job does not seem to exist.")));
+    }
 
 
 }

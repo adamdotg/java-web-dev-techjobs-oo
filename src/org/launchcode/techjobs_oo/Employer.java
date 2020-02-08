@@ -11,7 +11,6 @@ public class Employer extends JobField{
 //        id = nextId;
 //        nextId++;
 //    }
-
 //    public Employer(String value) {
 //        this();
 //        this.value = value;
@@ -19,9 +18,6 @@ public class Employer extends JobField{
     public Employer(String value) {
         super(value);
     }
-
-    // Custom toString, equals, and hashCode methods:
-
 //    @Override
 //    public String toString() {
 //        return value;
@@ -39,9 +35,6 @@ public class Employer extends JobField{
 //    public int hashCode() {
 //        return Objects.hash(getId());
 //    }
-
-    // Getters and Setters:
-
 //    public int getId() {
 //        return id;
 //    }
