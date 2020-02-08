@@ -115,26 +115,26 @@ public class JobTest {
         String emptyString = empty_field_1.toString();
         assertTrue(emptyString.contains("Data not available"));
     }
-  @Test
-  public void testEmptyFieldEmployer(){
-    String emptyString = empty_field_2.toString();
-    assertTrue(emptyString.contains("Data not available"));
-  }
-  @Test
-  public void testEmptyFieldLocation(){
-    String emptyString = empty_field_3.toString();
-    assertTrue(emptyString.contains("Data not available"));
-  }
-  @Test
-  public void testEmptyFieldPositionType(){
-    String emptyString = empty_field_4.toString();
-    assertTrue(emptyString.contains("Data not available"));
-  }
-  @Test
-  public void testEmptyFieldCoreCompetency(){
-    String emptyString = empty_field_5.toString();
-    assertTrue(emptyString.contains("Data not available"));
-  }
+    @Test
+      public void testEmptyFieldEmployer(){
+        String emptyString = empty_field_2.toString();
+        assertTrue(emptyString.contains("Data not available"));
+    }
+    @Test
+      public void testEmptyFieldLocation(){
+        String emptyString = empty_field_3.toString();
+        assertTrue(emptyString.contains("Data not available"));
+    }
+    @Test
+      public void testEmptyFieldPositionType(){
+        String emptyString = empty_field_4.toString();
+        assertTrue(emptyString.contains("Data not available"));
+    }
+    @Test
+      public void testEmptyFieldCoreCompetency(){
+        String emptyString = empty_field_5.toString();
+        assertTrue(emptyString.contains("Data not available"));
+      }
 
 
 
